@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Legal | Qoherence</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="icon" type="image/png" href="qoherence-thumbnaill.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-tint": "#004ee7",
+          "on-secondary-fixed-variant": "#474747",
+          "on-surface-variant": "#434656",
+          "error-container": "#ffdad6",
+          "secondary-fixed": "#e2e2e2",
+          "error": "#ba1a1a",
+          "secondary-fixed-dim": "#c6c6c6",
+          "on-surface": "#1a1c1c",
+          "outline-variant": "#c3c5d9",
+          "inverse-on-surface": "#f1f1f0",
+          "on-primary-container": "#e5e8ff",
+          "surface-container-low": "#f4f3f3",
+          "on-tertiary-fixed": "#002200",
+          "on-secondary-container": "#646464",
+          "inverse-surface": "#2f3131",
+          "secondary-container": "#e2e2e2",
+          "tertiary-fixed-dim": "#15e60d",
+          "surface-bright": "#faf9f9",
+          "primary": "#0043c8",
+          "surface-container": "#eeeeee",
+          "on-tertiary": "#ffffff",
+          "on-background": "#1a1c1c",
+          "tertiary-container": "#027a00",
+          "primary-fixed-dim": "#b6c4ff",
+          "on-tertiary-fixed-variant": "#015300",
+          "on-error-container": "#93000a",
+          "background": "#faf9f9",
+          "on-primary-fixed-variant": "#003ab2",
+          "surface-dim": "#dadada",
+          "tertiary-fixed": "#77ff61",
+          "on-secondary": "#ffffff",
+          "on-tertiary-container": "#a2ff8c",
+          "secondary": "#5e5e5e",
+          "on-secondary-fixed": "#1b1b1b",
+          "on-primary": "#ffffff",
+          "outline": "#737688",
+          "surface-container-high": "#e8e8e8",
+          "surface-container-lowest": "#ffffff",
+          "surface-variant": "#e2e2e2",
+          "inverse-primary": "#b6c4ff",
+          "surface": "#faf9f9",
+          "primary-fixed": "#dce1ff",
+          "surface-container-highest": "#e2e2e2",
+          "tertiary": "#015e00",
+          "on-error": "#ffffff",
+          "primary-container": "#0057ff",
+          "on-primary-fixed": "#001550"
+        },
+        fontFamily: {
+          "headline": ["Space Grotesk"],
+          "body": ["Inter"],
+          "label": ["Space Grotesk"]
+        },
+        borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background-color: #faf9f9; color: #1a1c1c; }
+  .font-space-grotesk { font-family: 'Space Grotesk', sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+</style>
+</head>
+<body class="bg-surface text-on-surface">
+
+<!-- Nav -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl">
+  <div class="flex justify-between items-center w-full px-6 md:px-8 py-5 md:py-6 max-w-screen-2xl mx-auto">
+    <a href="index.html" class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-[#0057FF] text-3xl" style="font-variation-settings: 'FILL' 1;">waves</span>
+      <span class="text-2xl font-bold tracking-tighter text-[#1a1c1c] font-space-grotesk">Qoherence</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-[#1a1c1c] opacity-60 hover:opacity-100 transition-opacity hover:text-[#0057FF] font-label text-sm uppercase tracking-widest" href="team.html">Team</a>
+      <a href="mailto:contact@qoherence.xyz" class="bg-primary-container text-white px-6 py-2.5 text-xs font-label font-bold uppercase tracking-widest active:scale-95 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+    <button id="menu-toggle" class="md:hidden flex items-center" aria-label="Menu">
+      <span class="material-symbols-outlined text-2xl text-on-surface">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-outline-variant/10 bg-white/95 backdrop-blur-xl px-6 pb-6 pt-4 space-y-4">
+    <a class="block font-label text-sm uppercase tracking-widest text-[#1a1c1c] opacity-70" href="team.html">Team</a>
+    <a href="mailto:contact@qoherence.xyz" class="inline-block bg-primary-container text-white px-6 py-2.5 text-xs font-label font-bold uppercase tracking-widest">
+      Contact Us
+    </a>
+  </div>
+</nav>
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    const icon = this.querySelector('.material-symbols-outlined');
+    menu.classList.toggle('hidden');
+    icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+  });
+</script>
+
+<main>
+<section class="pt-40 pb-32 px-8">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-4">Legal Notice</h1>
+    <div class="h-px w-24 bg-primary-container mb-16"></div>
+
+    <div class="space-y-12 font-body text-on-surface-variant leading-relaxed">
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Company Information</h2>
+        <p>Qoherence Management L.P.<br/>
+        A limited partnership organized and existing under the laws of its jurisdiction of formation.</p>
+        <p class="mt-4">For all inquiries, please contact us at <a href="mailto:contact@qoherence.xyz" class="text-primary-container font-bold hover:underline underline-offset-4">contact@qoherence.xyz</a>.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Disclaimer</h2>
+        <p>The information provided on this website is for general informational purposes only. Nothing on this website constitutes an offer to sell, a solicitation of an offer to buy, or a recommendation for any security, investment product, or investment strategy. Any such offer or solicitation will be made only by means of a confidential private placement memorandum or similar offering documents.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">No Investment Advice</h2>
+        <p>The content on this website does not constitute investment, financial, legal, or tax advice. Prospective investors should consult their own advisors regarding the legal, tax, regulatory, financial, and accounting implications of investing in any fund or vehicle managed by Qoherence Management L.P.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Forward-Looking Statements</h2>
+        <p>This website may contain forward-looking statements based on current expectations, estimates, forecasts, and projections. These statements involve risks and uncertainties, and actual results may differ materially from those expressed or implied. Past performance is not indicative of future results.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Intellectual Property</h2>
+        <p>All content, trademarks, logos, and intellectual property displayed on this website are the property of Qoherence Management L.P. or its licensors. No content may be reproduced, distributed, or transmitted without prior written permission.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Limitation of Liability</h2>
+        <p>To the fullest extent permitted by applicable law, Qoherence Management L.P. disclaims all liability for any loss or damage arising out of or in connection with the use of this website or reliance on any information provided herein.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Governing Law</h2>
+        <p>These terms and any disputes arising from the use of this website shall be governed by and construed in accordance with applicable law, without regard to conflict of law principles.</p>
+      </div>
+
+      <div class="pt-8 border-t border-outline-variant/10">
+        <p class="text-sm opacity-50">Last updated: March 2026</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#f4f3f3] py-20 px-8 border-t border-outline-variant/10">
+  <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div>
+      <div class="flex items-center gap-3 mb-8">
+        <span class="material-symbols-outlined text-[#0057FF] text-xl" style="font-variation-settings: 'FILL' 1;">waves</span>
+        <span class="text-lg font-bold text-[#1a1c1c] font-space-grotesk">Qoherence</span>
+      </div>
+      <p class="font-body text-sm text-[#1a1c1c] opacity-40 leading-loose max-w-sm">
+        Operating at the absolute edge of physics and finance. Supporting the quantum infrastructure of the next century.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-8">
+      <div class="flex flex-col gap-4">
+        <span class="font-label text-xs uppercase tracking-widest font-bold mb-2">Fund</span>
+        <a class="text-sm opacity-40 hover:opacity-100 hover:text-[#0057FF] underline-offset-4 transition-all" href="index.html">Home</a>
+        <a class="text-sm opacity-40 hover:opacity-100 hover:text-[#0057FF] underline-offset-4 transition-all" href="team.html">Team</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <span class="font-label text-xs uppercase tracking-widest font-bold mb-2">Legal</span>
+        <a class="text-sm opacity-40 hover:opacity-100 hover:text-[#0057FF] underline-offset-4 transition-all" href="legal.html">Legal</a>
+        <a class="text-sm opacity-40 hover:opacity-100 hover:text-[#0057FF] underline-offset-4 transition-all" href="privacy.html">Privacy</a>
+        <a class="text-sm opacity-40 hover:opacity-100 hover:text-[#0057FF] underline-offset-4 transition-all" href="mailto:contact@qoherence.xyz">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-screen-2xl mx-auto mt-20 pt-12 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between gap-6">
+    <p class="font-body text-xs opacity-40">&copy; 2026 Qoherence Management L.P. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

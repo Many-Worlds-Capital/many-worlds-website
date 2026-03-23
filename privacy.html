@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy Policy | Qoherence</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="icon" type="image/png" href="qoherence-thumbnaill.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-tint": "#004ee7",
+          "on-secondary-fixed-variant": "#474747",
+          "on-surface-variant": "#434656",
+          "error-container": "#ffdad6",
+          "secondary-fixed": "#e2e2e2",
+          "error": "#ba1a1a",
+          "secondary-fixed-dim": "#c6c6c6",
+          "on-surface": "#1a1c1c",
+          "outline-variant": "#c3c5d9",
+          "inverse-on-surface": "#f1f1f0",
+          "on-primary-container": "#e5e8ff",
+          "surface-container-low": "#f4f3f3",
+          "on-tertiary-fixed": "#002200",
+          "on-secondary-container": "#646464",
+          "inverse-surface": "#2f3131",
+          "secondary-container": "#e2e2e2",
+          "tertiary-fixed-dim": "#15e60d",
+          "surface-bright": "#faf9f9",
+          "primary": "#0043c8",
+          "surface-container": "#eeeeee",
+          "on-tertiary": "#ffffff",
+          "on-background": "#1a1c1c",
+          "tertiary-container": "#027a00",
+          "primary-fixed-dim": "#b6c4ff",
+          "on-tertiary-fixed-variant": "#015300",
+          "on-error-container": "#93000a",
+          "background": "#faf9f9",
+          "on-primary-fixed-variant": "#003ab2",
+          "surface-dim": "#dadada",
+          "tertiary-fixed": "#77ff61",
+          "on-secondary": "#ffffff",
+          "on-tertiary-container": "#a2ff8c",
+          "secondary": "#5e5e5e",
+          "on-secondary-fixed": "#1b1b1b",
+          "on-primary": "#ffffff",
+          "outline": "#737688",
+          "surface-container-high": "#e8e8e8",
+          "surface-container-lowest": "#ffffff",
+          "surface-variant": "#e2e2e2",
+          "inverse-primary": "#b6c4ff",
+          "surface": "#faf9f9",
+          "primary-fixed": "#dce1ff",
+          "surface-container-highest": "#e2e2e2",
+          "tertiary": "#015e00",
+          "on-error": "#ffffff",
+          "primary-container": "#0057ff",
+          "on-primary-fixed": "#001550"
+        },
+        fontFamily: {
+          "headline": ["Space Grotesk"],
+          "body": ["Inter"],
+          "label": ["Space Grotesk"]
+        },
+        borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background-color: #faf9f9; color: #1a1c1c; }
+  .font-space-grotesk { font-family: 'Space Grotesk', sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+</style>
+</head>
+<body class="bg-surface text-on-surface">
+
+<!-- Nav -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl">
+  <div class="flex justify-between items-center w-full px-6 md:px-8 py-5 md:py-6 max-w-screen-2xl mx-auto">
+    <a href="index.html" class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-[#0057FF] text-3xl" style="font-variation-settings: 'FILL' 1;">waves</span>
+      <span class="text-2xl font-bold tracking-tighter text-[#1a1c1c] font-space-grotesk">Qoherence</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-[#1a1c1c] opacity-60 hover:opacity-100 transition-opacity hover:text-[#0057FF] font-label text-sm uppercase tracking-widest" href="team.html">Team</a>
+      <a href="mailto:contact@qoherence.xyz" class="bg-primary-container text-white px-6 py-2.5 text-xs font-label font-bold uppercase tracking-widest active:scale-95 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+    <button id="menu-toggle" class="md:hidden flex items-center" aria-label="Menu">
+      <span class="material-symbols-outlined text-2xl text-on-surface">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-outline-variant/10 bg-white/95 backdrop-blur-xl px-6 pb-6 pt-4 space-y-4">
+    <a class="block font-label text-sm uppercase tracking-widest text-[#1a1c1c] opacity-70" href="team.html">Team</a>
+    <a href="mailto:contact@qoherence.xyz" class="inline-block bg-primary-container text-white px-6 py-2.5 text-xs font-label font-bold uppercase tracking-widest">
+      Contact Us
+    </a>
+  </div>
+</nav>
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    const icon = this.querySelector('.material-symbols-outlined');
+    menu.classList.toggle('hidden');
+    icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+  });
+</script>
+
+<main>
+<section class="pt-40 pb-32 px-8">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-4">Privacy Policy</h1>
+    <div class="h-px w-24 bg-primary-container mb-16"></div>
+
+    <div class="space-y-12 font-body text-on-surface-variant leading-relaxed">
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Introduction</h2>
+        <p>Qoherence Management L.P. (&ldquo;Qoherence,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) respects your privacy and is committed to protecting the personal data you share with us. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Information We Collect</h2>
+        <p class="mb-4">We may collect the following types of information:</p>
+        <ul class="list-none space-y-3">
+          <li class="flex items-start gap-3">
+            <span class="text-primary-container mt-1.5 text-xs">&#9632;</span>
+            <span><strong class="text-on-surface">Contact information</strong> you voluntarily provide when reaching out to us via email, including your name, email address, and the content of your correspondence.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary-container mt-1.5 text-xs">&#9632;</span>
+            <span><strong class="text-on-surface">Technical data</strong> automatically collected when you visit our website, such as your IP address, browser type, operating system, and browsing behavior through standard server logs.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary-container mt-1.5 text-xs">&#9632;</span>
+            <span><strong class="text-on-surface">Cookies</strong> &mdash; this website does not use tracking cookies or third-party analytics. We use only essential cookies necessary for the website to function.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">How We Use Your Information</h2>
+        <p>We use the information we collect solely for the following purposes:</p>
+        <ul class="list-none space-y-3 mt-4">
+          <li class="flex items-start gap-3">
+            <span class="text-primary-container mt-1.5 text-xs">&#9632;</span>
+            <span>To respond to your inquiries and communications</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary-container mt-1.5 text-xs">&#9632;</span>
+            <span>To maintain and improve our website</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary-container mt-1.5 text-xs">&#9632;</span>
+            <span>To comply with legal obligations</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Data Sharing</h2>
+        <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances: to comply with legal obligations, to protect our rights, or with service providers who assist in operating our website under strict confidentiality agreements.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Data Retention</h2>
+        <p>We retain personal data only for as long as necessary to fulfill the purposes for which it was collected, or as required by applicable law.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Your Rights</h2>
+        <p>Depending on your jurisdiction, you may have the right to access, correct, delete, or port your personal data, as well as the right to object to or restrict its processing. To exercise any of these rights, please contact us at <a href="mailto:contact@qoherence.xyz" class="text-primary-container font-bold hover:underline underline-offset-4">contact@qoherence.xyz</a>.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+      </div>
+
+      <div>
+        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Contact</h2>
+        <p>For any questions or concerns regarding this Privacy Policy, please contact us at <a href="mailto:contact@qoherence.xyz" class="text-primary-container font-bold hover:underline underline-offset-4">contact@qoherence.xyz</a>.</p>
+      </div>
+
+      <div class="pt-8 border-t border-outline-variant/10">
+        <p class="text-sm opacity-50">Last updated: March 2026</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#f4f3f3] py-20 px-8 border-t border-outline-variant/10">
+  <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div>
+      <div class="flex items-center gap-3 mb-8">
+        <span class="material-symbols-outlined text-[#0057FF] text-xl" style="font-variation-settings: 'FILL' 1;">waves</span>
+        <span class="text-lg font-bold text-[#1a1c1c] font-space-grotesk">Qoherence</span>
+      </div>
+      <p class="font-body text-sm text-[#1a1c1c] opacity-40 leading-loose max-w-sm">
+        Operating at the absolute edge of physics and finance. Supporting the quantum infrastructure of the next century.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-8">
+      <div class="flex flex-col gap-4">
+        <span class="font-label text-xs uppercase tracking-widest font-bold mb-2">Fund</span>
+        <a class="text-sm opacity-40 hover:opacity-100 hover:text-[#0057FF] underline-offset-4 transition-all" href="index.html">Home</a>
+        <a class="text-sm opacity-40 hover:opacity-100 hover:text-[#0057FF] underline-offset-4 transition-all" href="team.html">Team</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <span class="font-label text-xs uppercase tracking-widest font-bold mb-2">Legal</span>
+        <a class="text-sm opacity-40 hover:opacity-100 hover:text-[#0057FF] underline-offset-4 transition-all" href="legal.html">Legal</a>
+        <a class="text-sm opacity-40 hover:opacity-100 hover:text-[#0057FF] underline-offset-4 transition-all" href="privacy.html">Privacy</a>
+        <a class="text-sm opacity-40 hover:opacity-100 hover:text-[#0057FF] underline-offset-4 transition-all" href="mailto:contact@qoherence.xyz">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-screen-2xl mx-auto mt-20 pt-12 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between gap-6">
+    <p class="font-body text-xs opacity-40">&copy; 2026 Qoherence Management L.P. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
