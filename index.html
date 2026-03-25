@@ -120,9 +120,10 @@
 </script>
 
 <main>
+<div class="relative">
+<canvas id="particle-canvas" class="absolute inset-0 z-0 pointer-events-none" style="width:100%;height:100%;"></canvas>
 <!-- Hero Section -->
 <section class="relative min-h-[85vh] flex flex-col items-center justify-center pt-28 pb-16 px-8 overflow-hidden">
-  <canvas id="particle-canvas" class="absolute inset-0 z-0 pointer-events-none" style="width:100%;height:100%;"></canvas>
   <div class="relative z-10 max-w-4xl text-center">
     <div class="flex items-center justify-center gap-2 mb-8">
       <div class="quantum-pulse"></div>
@@ -139,6 +140,8 @@
     </p>
   </div>
 </section>
+
+</div><!-- end canvas wrapper -->
 
 <!-- CTA Section -->
 <section class="bg-surface py-32 px-8 text-center">
