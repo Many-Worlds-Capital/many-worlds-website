@@ -79,6 +79,8 @@
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
   .quantum-pulse { width: 8px; height: 8px; background-color: #0057ff; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+  @keyframes ring-pulse { 0%, 100% { transform: scale(1); opacity: .25; } 50% { transform: scale(1.04); opacity: .5; } }
+  .ring-pulse { animation: ring-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite; transform-origin: center; }
 </style>
 </head>
 <body class="bg-surface text-on-surface">
@@ -92,11 +94,11 @@
     </a>
     <!-- Desktop nav -->
     <div class="hidden md:flex items-center gap-8">
-      <a class="text-[#1a1c1c] font-bold transition-opacity hover:text-[#0057FF] font-label text-sm uppercase tracking-widest" href="index.html">Investments</a>
+      <a class="text-[#1a1c1c] font-label text-sm uppercase tracking-widest border-b-2 border-[#0057ff] pb-1" href="index.html">Investments</a>
       <a class="text-[#1a1c1c] opacity-60 hover:opacity-100 transition-opacity hover:text-[#0057FF] font-label text-sm uppercase tracking-widest" href="podcast.html">Podcast</a>
       <a class="text-[#1a1c1c] opacity-60 hover:opacity-100 transition-opacity hover:text-[#0057FF] font-label text-sm uppercase tracking-widest" href="tools.html">Tools</a>
       <a class="text-[#1a1c1c] opacity-60 hover:opacity-100 transition-opacity hover:text-[#0057FF] font-label text-sm uppercase tracking-widest" href="team.html">Team</a>
-      <a href="mailto:contact@manyworldscapital.com" class="bg-primary-container text-white px-6 py-2.5 text-xs font-label font-bold uppercase tracking-widest active:scale-95 transition-all duration-300">Contact Us</a>
+      <a href="mailto:contact@manyworldscapital.com" class="inline-flex items-center gap-2 border border-on-surface/20 hover:border-on-surface text-[#1a1c1c] px-5 py-2.5 text-xs font-label font-bold uppercase tracking-widest transition-colors duration-300">Contact Us <span class="material-symbols-outlined text-base">arrow_outward</span></a>
     </div>
     <!-- Mobile hamburger -->
     <button id="menu-toggle" class="md:hidden flex items-center" aria-label="Menu">
@@ -124,28 +126,35 @@
 </script>
 
 <main>
-<div class="relative">
-<canvas id="particle-canvas" class="absolute inset-0 z-0 pointer-events-none" style="width:100%;height:100%;"></canvas>
 <!-- Hero Section -->
-<section class="relative min-h-[70vh] flex flex-col items-center justify-center pt-28 pb-16 px-8 overflow-hidden">
-  <div class="relative z-10 max-w-4xl text-center">
-    <div class="flex items-center justify-center gap-2 mb-8">
-      <div class="quantum-pulse"></div>
-      <span class="font-label text-xs uppercase tracking-[0.3em] opacity-60">System State: Coherent</span>
+<section class="min-h-[70vh] flex items-center pt-28 pb-16 px-8">
+  <div class="max-w-screen-xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center">
+    <div class="order-2 md:order-1">
+      <div class="inline-flex items-center gap-2 border border-outline-variant/40 px-3 py-1.5 mb-10">
+        <div class="quantum-pulse"></div>
+        <span class="font-label text-xs uppercase tracking-[0.3em] opacity-70">System State: Coherent</span>
+      </div>
+      <h1 class="font-headline text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[0.95]">
+        We're Many Worlds.
+      </h1>
+      <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-md leading-relaxed opacity-80 mb-10">
+        We invest in category-defining teams building in the quantum computing space.
+      </p>
+      <a href="#how-we-invest" class="inline-flex items-center gap-2 font-label text-sm uppercase tracking-widest font-bold hover:text-[#0057FF] transition-colors">
+        How we invest <span aria-hidden="true">→</span>
+      </a>
     </div>
-    <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-10 leading-[0.9]">
-      We're Many Worlds.
-    </h1>
-    <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-xl mx-auto leading-relaxed opacity-80 mb-12">
-      We invest in category-defining teams building in the quantum computing space.
-    </p>
-    <a href="#how-we-invest" class="inline-block bg-primary-container text-white px-10 py-4 font-label font-bold uppercase tracking-widest text-sm hover:bg-primary transition-colors duration-300">
-      How we invest
-    </a>
+    <div class="order-1 md:order-2 flex justify-center md:justify-end items-center">
+      <div class="relative w-48 h-48 md:w-72 md:h-72">
+        <span class="absolute inset-0 rounded-full border border-[#0057ff] opacity-20 ring-pulse" style="animation-delay:0s"></span>
+        <span class="absolute inset-[12%] rounded-full border border-[#0057ff] opacity-30 ring-pulse" style="animation-delay:.4s"></span>
+        <span class="absolute inset-[26%] rounded-full border border-[#0057ff] opacity-40 ring-pulse" style="animation-delay:.8s"></span>
+        <span class="absolute inset-[42%] rounded-full border border-[#0057ff] opacity-60 ring-pulse" style="animation-delay:1.2s"></span>
+        <span class="absolute inset-[46%] rounded-full bg-[#0057ff]"></span>
+      </div>
+    </div>
   </div>
 </section>
-
-</div><!-- end canvas wrapper -->
 
 <!-- How We Invest Section -->
 <section id="how-we-invest" class="py-24 px-8">
@@ -217,6 +226,5 @@
   </div>
 </footer>
 
-<script src="js/particles.js"></script>
 </body>
 </html>
