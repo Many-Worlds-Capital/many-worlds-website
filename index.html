@@ -27,9 +27,15 @@
     <h1>We invest in category&#8209;defining teams in quantum.</h1>
     <p>Strategic opportunities at any stage, from pre-seed to IPO and SPAC.</p>
     <div class="cta-row">
-      <a class="cta cta-primary" href="https://manyworlds.beehiiv.com/subscribe">Subscribe to our newsletter</a>
+      <form class="subscribe" id="subscribe" action="/api/subscribe" method="post" novalidate>
+        <label class="visually-hidden" for="subscribe-email">Email</label>
+        <input id="subscribe-email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
+        <input class="visually-hidden" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit">Subscribe</button>
+      </form>
       <a class="cta" href="mailto:contact@manyworldscapital.com">Get in touch</a>
     </div>
+    <p class="subscribe-note" id="subscribe-note" role="status" aria-live="polite">Many Worlds Weekly: quantum news for investors, every Friday.</p>
   </div>
 </main>
 <footer class="site-footer">
@@ -40,5 +46,57 @@
   </nav>
 </footer>
 <script src="worlds.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('subscribe');
+  var note = document.getElementById('subscribe-note');
+  var input = form.elements.email;
+  var button = form.querySelector('button');
+  var q = new URLSearchParams(location.search).get('subscribed');
+  if (q === '1') done();
+  if (q === '0') say('Something went wrong. Please try again.', true);
+
+  function say(text, isError) {
+    note.textContent = text;
+    note.classList.toggle('is-error', !!isError);
+  }
+  function done() {
+    form.classList.add('is-done');
+    input.disabled = true;
+    button.disabled = true;
+    button.textContent = 'Subscribed';
+    say("You're in. Check your inbox for a welcome email.");
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = input.value.trim();
+    if (!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)) {
+      say('Please enter a valid email.', true);
+      input.focus();
+      return;
+    }
+    button.disabled = true;
+    button.textContent = 'Subscribing…';
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', accept: 'application/json' },
+      body: JSON.stringify({ email: email, company: form.elements.company.value })
+    })
+      .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+      .then(function (data) {
+        if (data.ok) return done();
+        button.disabled = false;
+        button.textContent = 'Subscribe';
+        say(data.error || 'Something went wrong. Please try again.', true);
+      })
+      .catch(function () {
+        button.disabled = false;
+        button.textContent = 'Subscribe';
+        say('Something went wrong. Please try again.', true);
+      });
+  });
+})();
+</script>
 </body>
 </html>

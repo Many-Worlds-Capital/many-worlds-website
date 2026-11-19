@@ -121,8 +121,57 @@ img { display: block; max-width: 100%; }
 
 .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
 .cta-row .cta { margin-top: 0; }
-.cta-primary { background: var(--ink); color: var(--paper); }
-.cta-primary:hover { background: var(--signal); border-color: var(--signal); }
+.subscribe {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  overflow: hidden;
+  max-width: 100%;
+}
+.subscribe input {
+  flex: 1;
+  min-width: 0;
+  width: 15rem;
+  padding: 0.8rem 0.4rem 0.8rem 1.35rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9375rem;
+  outline: none;
+}
+.subscribe input::placeholder { color: var(--graphite); }
+.subscribe:focus-within { outline: 1px solid var(--signal); outline-offset: 4px; }
+.subscribe button {
+  flex: none;
+  margin: 3px;
+  padding: 0 1.15rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+.subscribe button:hover { background: var(--signal); }
+.subscribe button:disabled { cursor: default; }
+.subscribe.is-done { border-color: var(--hairline); }
+.subscribe.is-done button { background: var(--signal); }
+
+.subscribe-note { margin: 0.9rem 0 0; font-size: 0.875rem; color: var(--graphite); }
+.hero-copy .subscribe-note { margin: 0.9rem 0 0; font-size: 0.875rem; }
+.subscribe-note.is-error { color: #c4271f; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
 
 /* Inner pages */
 
