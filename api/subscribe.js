@@ -5,6 +5,19 @@
 const PUBLICATION_ID = 'pub_e502609a-3c84-4512-8399-aa2cb3a4f9ea';
 const EMAIL_RE = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
 
+// Beehiiv confirmation is off, so cap signups per IP (best effort, per instance).
+const LIMIT = 5;
+const WINDOW_MS = 10 * 60 * 1000;
+const hits = new Map();
+function limited(ip) {
+  const now = Date.now();
+  const recent = (hits.get(ip) || []).filter((t) => now - t < WINDOW_MS);
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) hits.clear();
+  return recent.length > LIMIT;
+}
+
 function readBody(req) {
   if (req.body && typeof req.body === 'object') return req.body;
   if (typeof req.body === 'string') {
@@ -27,6 +40,12 @@ export default async function handler(req, res) {
     return res.status(303).end();
   };
 
+  res.setHeader('Cache-Control', 'no-store');
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+
+  const ip = String(req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || 'unknown').split(',')[0].trim();
+  if (limited(ip)) return reply(429, { ok: false, error: 'Too many requests. Try again in a few minutes.' });
+
   const body = readBody(req);
   // Honeypot: real visitors never fill this hidden field.
   if (body.company) return reply(200, { ok: true });
@@ -45,7 +64,7 @@ export default async function handler(req, res) {
       headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json' },
       body: JSON.stringify({
         email,
-        reactivate_existing: true,
+        reactivate_existing: false, // someone who unsubscribed stays unsubscribed
         send_welcome_email: true,
         utm_source: 'manyworlds.vc',
         utm_medium: 'website',
