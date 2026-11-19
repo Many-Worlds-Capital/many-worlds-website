@@ -119,6 +119,11 @@ img { display: block; max-width: 100%; }
 }
 .cta:hover { background: var(--ink); color: var(--paper); }
 
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
+.cta-row .cta { margin-top: 0; }
+.cta-primary { background: var(--ink); color: var(--paper); }
+.cta-primary:hover { background: var(--signal); border-color: var(--signal); }
+
 /* Inner pages */
 
 .page {
@@ -277,8 +282,16 @@ a.row:hover .row-name { color: var(--signal); }
 .home .site-footer { border-top: 0; }
 
 @media (max-width: 40rem) {
-  .site-nav { gap: 1.1rem; font-size: 0.875rem; }
+  .site-header { gap: 1rem; }
+  .wordmark { font-size: 1.25rem; white-space: nowrap; gap: 0.45rem; }
+  .wordmark .mark { width: 1.5rem; height: 1.5rem; }
+  .site-nav { gap: 0.9rem; font-size: 0.875rem; }
   .row { grid-template-columns: 1fr; gap: 0.35rem; }
   .people { grid-template-columns: 1fr 1fr; gap: 2.25rem 1.25rem; }
   .person .portrait, .person .monogram { width: 6rem; height: 6rem; }
+}
+
+@media (max-width: 22.5rem) {
+  .wordmark { font-size: 1.125rem; }
+  .site-nav { gap: 0.7rem; font-size: 0.8125rem; }
 }
